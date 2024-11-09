@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>mus3</title>
+    <link rel="stylesheet" href="muse.css" />
+    <style>
+      .assignDJ {
+        display: flex;
+        flex-direction: column;
+      }
+      .assignDJ > div {
+        background-color: #6b6b6b;
+        margin: 10px;
+        padding: 20px;
+        font-size: 15px;
+      }
+    </style>
+    <script>
+      function validate() {
+        if (document.getElementById("test").value == "test") {
+          text = "Input OK";
+        } else {
+          text = "Input not valid";
+        }
+        document.getElementById("valid").innerHTML = text;
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar" style="width: 10%">
+      <h3>mus3</h3>
+      <!--TODO: change hrefs-->
+      <a href="#" class="activePage">Assign</a><br />
+      <a href="report">Report</a>
+    </div>
+
+    <!-- Page Content -->
+    <div class="assignDJ">
+      <div id="assignForm">
+        <form>
+          <label>Assign dj:</label>
+          <select id="dj">
+            <option value="dj1">dj1</option>
+            <option value="dj2">dj2</option>
+            <option value="dj3">dj3</option>
+          </select>
+          <input type="date" id="timeslot" />
+          <input type="button" value="submit" />
+        </form>
+      </div>
+      <div>
+        list of recent djs and timeslot
+        <ul>
+          <li><%= slot1.dj.name %> : slot1</li>
+          <li><%= slot2.dj.name %> : slot2</li>
+          <li><%= slot3.dj.name %> : slot3</li>
+        </ul>
+        <!-- Maybe add 'add dj' -->
+        <div>
+          temp for input validation, only enter 'test':
+          <input type="text" id="test" />
+          <input type="button" onclick="validate()" value="submit" />
+          <a id="valid"></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

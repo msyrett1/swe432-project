@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>mus3</title>
+    <link rel="stylesheet" href="muse.css" />
+    <style>
+      .songReport {
+        display: flex;
+        flex-direction: column;
+      }
+      .songReport > div {
+        background-color: #6b6b6b;
+        margin: 10px;
+        padding: 20px;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar" style="width: 10%">
+      <h3>mus3</h3>
+      <!--TODO: change hrefs-->
+      <a href="assign" class="activePage">Assign</a><br />
+      <a href="#">Report</a>
+    </div>
+
+    <!-- Page Content -->
+    <div class="songReport">
+      <div id="reportForm">
+        <form>
+          <label>choose timeslot:</label>
+          <input type="date" id="timeslot" />
+          <input
+            onclick="alert('not implimented')"
+            type="button"
+            value="submit"
+          />
+          | current producer | current dj
+        </form>
+      </div>
+      <div>
+        table of songs played vs queued
+        <table>
+          <tr>
+            <th>DJ played</th>
+            <th>Producer queued</th>
+          </tr>
+          <tr>
+            <td>song1</td>
+            <td>song1</td>
+          </tr>
+          <tr>
+            <td>song2</td>
+            <td>song2</td>
+          </tr>
+          <tr>
+            <td>song3</td>
+            <td>song3</td>
+          </tr>
+        </table>
+        <br />
+        <br />
+        <p id="testElem">hover over</p>
+        <script>
+          const testElem = document.getElementById("testElem");
+          testElem.addEventListener("mouseover", () => {
+            testElem.style.backgroundColor = "green";
+          });
+          testElem.addEventListener("mouseout", () => {
+            testElem.style.backgroundColor = null;
+          });
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
